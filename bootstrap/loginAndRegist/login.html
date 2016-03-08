@@ -1,0 +1,287 @@
+<html  xmlns:wb="http://open.weibo.com/wb">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
+	<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
+	<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
+
+	<title>登录 - MainCode | 煮代码</title>
+
+	<!-- 腾讯登录-->
+	<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101297186" data-redirecturi="http://www.maincode.cn/operation/close.html" charset="utf-8" ></script>
+	<script type="text/javascript">
+		QC.Login({
+			btnId : "qqLoginBtn",//插入按钮的html标签id
+			size : "B_M",//按钮尺寸
+			scope : "get_user_info",//展示授权，全部可用授权可填 all
+			display : "pc"//应用场景，可选
+		});
+	</script>
+
+	<!-- 微博登录-->
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3390408751" type="text/javascript" charset="utf-8"></script>
+	<script>
+		WB2.anyWhere(function (W) {
+			W.widget.connectButton({
+				id: "wb_connect_btn",
+				type: '4,2',
+				callback: {
+					login: function (o) { //登录后的回调函数
+						alert("login: " + o.screen_name)
+					},
+					logout: function () { //退出后的回调函数
+						alert('logout');
+					}
+				}
+			});
+		});
+	</script>
+
+	<style>
+		.socialaccount_providers li {
+			float: left;
+			list-style: none;
+		}
+		.socialaccount_providers li a {
+			width: 55px;
+			height: 55px;
+			display: block;
+			border: 0;
+			border-bottom-color: #c9302c;
+			margin-left:60%;
+			text-indent: -999em;
+			overflow: hidden;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			text-align: left;
+			direction: ltr;
+		}
+		.QQ {
+			background: transparent url(../static/icons/50x50/qq.png) no-repeat 0 0;
+			margin: 0 10px 10px 0;
+		}
+		.sinaweibo {
+			background: transparent url(../static/icons/50x50/sinaweibo.png) no-repeat 0 0;
+			margin: 0 10px 10px 0;
+		}
+		.wechat {
+			background: transparent url(../static/icons/50x50/wechat.png) no-repeat 0 0;
+			margin: 0 10px 10px 0;
+		}
+
+	</style>
+	<style>
+		body {
+			overflow-y: scroll;
+		}
+		a {
+			color: #0088cc;
+		}
+		a:hover {
+			color: #005580;
+		}
+		.form-signin {
+			max-width: 300px;
+			padding: 19px 29px 29px;
+			margin: 0 auto 20px;
+			background-color: #fff;
+			border: 1px solid #e5e5e5;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			-moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			box-shadow: 0 1px 2px rgba(0,0,0,.05);
+		}
+
+		.message {
+			border: 1px solid #e6db55;
+			background-color: #ffffe0;
+			padding: 15px 30px 15px 15px;
+			margin: 20px 0;
+		}
+		.navbar-extra {
+			border-radius: 0px;
+			margin-bottom: 30px;
+		}
+		#chat-link {
+			position: fixed;
+			right: 5px;
+			bottom: 10px;
+			background: #fff;
+			border: 1px solid #e0e0e0;
+			padding: 5px 15px 10px 15px;
+			-webkit-border-radius: 5px 0 0 5px;
+			-moz-border-radius: 5px 0 0 5px;
+			-ms-border-radius: 5px 0 0 5px;
+			-o-border-radius: 5px 0 0 5px;
+			border-radius: 5px 0 0 5px;
+			-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+			-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+			box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+			color: #979faf;
+		}
+
+		[ng-cloak] { display: none; }
+
+
+		ul.nav li.dropdown:hover > ul.dropdown-menu {
+			display: block;
+		}
+		#subscribe {
+			background-color: #373737;
+		}
+
+		@media(min-width: 768px) {
+			.container .navbar-collapse.collapse {
+				position:relative;
+			}
+			.navbar-brand.narrow-display {
+				display: none;
+			}
+			#navBar-right {
+				position:absolute;
+				display:inline-block;
+				right: 0px;
+			}
+			@media(max-width: 767px) {
+				.navbar-brand.narrow-display {
+					display: block;
+				}
+			}
+		}
+
+		html, body {
+			height: 100%;
+		}
+
+		.content-wrapper {
+			box-sizing: border-box;
+			min-height: 100%;
+		}
+
+
+	</style>
+
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="navbar navbar-inverse">
+				<div class="navbar-inner">
+					<div class="container-fluid">
+						<a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+						<a href="http://www.maincode.cn" class="brand">煮代码 | maincode</a>
+						<div class="nav-collapse collapse navbar-responsive-collapse">
+							<ul class="nav">
+								<li>
+									<a href="blogMD/examples/index.html" target="_blank">博客</a>
+								</li>
+								<li>
+									<a href="http://www.leetcode.com" target="_blank">难题</a>
+								</li>
+								<li>
+									<a href="http://wiki.jikexueyuan.com" target="_blank">电子书</a>
+								</li>
+								<li>
+									<a href="#">讨论</a>
+								</li>
+								<li class="dropdown">
+									<a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">关于我们</a>
+										</li>
+										<li>
+											<a href="#">友情链接</a>
+										</li>
+										<li>
+											<a href="#">其他</a>
+										</li>
+										<li class="divider">
+										</li>
+										<li class="nav-header">
+											标签
+										</li>
+										<li>
+											<a href="#">链接1</a>
+										</li>
+										<li>
+											<a href="#">链接2</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+
+							<ul class="nav pull-right">
+								<li id="loginBtn">
+									<a href="login.html" target="_self">登录</a>
+								</li>
+								<li class="divider-vertical">
+								</li>
+								<li id="registBtn">
+									<a href="regist.html" target="_self">注册</a>
+								</li>
+
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="hero-unit well">
+
+
+
+				<div class="container">
+					<form class="form-signin" method="POST" action="/loginAndRegist/login.php">
+						<h3 class="form-signin-heading">登录</h3>
+						<hr />
+						<input type='hidden' name='csrfmiddlewaretoken' value='DVTy565rWqjUXMx4v969WXuTHzJzVPiU' />
+						<div class="form-group" align="center"><input autofocus="autofocus" id="id_username" maxlength="30" name="username" placeholder="输入用户名" type="text" style="height: 30px;"/></div>
+						<div><br/></div>
+						<div class="form-group" align="center"><input id="id_password1" name="password1" placeholder="输入密码" type="password" class="input-lg form-control" style="height: 30px;"/></div>
+
+
+
+						<div align="center">
+						<button class="btn btn-primary" type="submit">登录</button>
+						</div>
+						<hr>
+						<div class="row socialaccount_ballot">
+							<p class="text-center"> 或者使用第三方登录 </p>
+							<ul class="socialaccount_providers">
+
+
+
+								<li>
+									<a title="wechat" class="socialaccount_provider wechat"
+									   href="#">wechat</a>
+								</li>
+
+								<li>
+									<a title="sinaweibo" class="socialaccount_provider sinaweibo"
+									   href="#">sinaweibo</a>
+								</li>
+								<li>
+									<a title="QQ" class="socialaccount_provider QQ"
+									   href="#">QQ</a>
+								</li>
+
+							</ul>
+						</div>
+
+					</form>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>个人中心</title>
+    <script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
+    <link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../operation/operateCookie.js"></script>
+    <script>
+        window.onload = function(){
+           var mine = getCookie("username");
+            if (mine == "") {
+                self.opener = null;
+                self.location = "http://www.maincode.cn/";
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="row-fluid">
+    <div class="span12">
+
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                    <a href="http://www.maincode.cn" class="brand">煮代码 | maincode</a>
+                    <div class="nav-collapse collapse navbar-responsive-collapse">
+                        <ul class="nav">
+                            <li>
+                                <a href="blogMD/examples/index.html" target="_blank">博客</a>
+                            </li>
+                            <li>
+                                <a href="http://www.leetcode.com" target="_blank">难题</a>
+                            </li>
+                            <li>
+                                <a href="http://wiki.jikexueyuan.com" target="_blank">电子书</a>
+                            </li>
+                            <li>
+                                <a href="#">讨论</a>
+                            </li>
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">关于我们</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">友情链接</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">其他</a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li class="nav-header">
+                                        标签
+                                    </li>
+                                    <li>
+                                        <a href="#">链接1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">链接2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav pull-right">
+
+                            <li class="divider-vertical">
+                            </li>
+
+                            <li id="profile" class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">个人中心<strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="profile/profile.html" target="_blank">个人信息</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">我的博客</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">我的书单</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" onclick="clearUserName()" target="_self">注销</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-unit well">
+
+            <div class="row-fluid">
+                <div class="span4">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">主页</a> <span class="divider">/</span>
+                        </li>
+                        <li>
+                            <a href="#">类目</a> <span class="divider">/</span>
+                        </li>
+                        <li class="active">
+                            主题
+                        </li>
+                    </ul>
+                    <h2>
+                        标题
+                    </h2>
+                    <p>
+                        本可视化布局程序在HTML5浏览器上运行更加完美, 能实现自动本地化保存, 即使关闭了网页, 下一次打开仍然能恢复上一次的操作.
+                    </p>
+                    <p>
+                        <a class="btn" href="#">查看更多 »</a>
+                    </p>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                面板标题
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                        <div class="panel-footer">
+                            Panel footer
+                        </div>
+                    </div>
+                </div>
+                <div class="span8">
+                    <div class="media">
+                        <a href="#" class="pull-left"><img src="img/a_002.jpg" class="media-object" alt='' /></a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                嵌入媒体标题
+                            </h4> 请尽量使用HTML5兼容的视频格式和视频代码实现视频播放, 以达到更好的体验效果.
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">主页</a>
+                        <div class="list-group-item">
+                            列表标题
+                        </div>
+                        <div class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                列表项标题
+                            </h4>
+                            <p class="list-group-item-text">
+                                ...
+                            </p>
+                        </div>
+                        <div class="list-group-item">
+                            <span class="badge">14</span>帮助
+                        </div> <a class="list-group-item active"><span class="badge">14</span>帮助</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
