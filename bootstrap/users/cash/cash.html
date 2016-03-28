@@ -1,0 +1,194 @@
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.js"></script>
+
+    <link href="../../bootstrap-combined.min.css" rel="stylesheet" media="screen">
+
+    <script src="../../bootstrap.ck.js"></script>
+
+    <script src="../../users/headerNavigation.js"></script>
+
+    <link type="image/x-icon" rel="shortcut icon" href="../../favicon.ico" />
+    <title>MainCode | 煮代码 - 学习是一种信养！</title>
+    <style>
+        .myPosition:hover{
+            max-width: none;
+            /*width: -webkit-calc(100% + 50px);*/
+            -webkit-transform: scale(2.6);
+            -webkit-transition: opacity 0.35s,
+            -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+
+        }
+        .myPosition {
+            width: calc(100%);
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#wx01y").click(function(){
+                $("#wximg")[0].src = "wcash01.png";
+            });
+            $("#wx1y").click(function(){
+                $("#wximg")[0].src = "wcash1.png";
+            });
+            $("#wx10y").click(function(){
+                $("#wximg")[0].src = "wcash10.png";
+            });
+            $("#wx50y").click(function(){
+                $("#wximg")[0].src = "wcash50.png";
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a href="http://www.maincode.cn" class="brand">煮代码 | maincode</a>
+                        <div class="nav-collapse collapse navbar-responsive-collapse">
+                            <ul class="nav">
+                                <li>
+                                    <a href="../../blog/broadBlog.html" target="_blank">博客</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.leetcode.com" target="_blank">难题</a>
+                                </li>
+                                <li>
+                                    <a href="http://wiki.jikexueyuan.com" target="_blank">电子书</a>
+                                </li>
+                                <li>
+                                    <a href="#">讨论</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">更多<strong class="caret"></strong></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">关于我们</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">友情链接</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">捐赠与打赏</a>
+                                        </li>
+                                        <li class="divider">
+                                        </li>
+                                        <li class="nav-header">
+                                            in the future:
+                                        </li>
+                                        <li>
+                                            <a href="#">愿景</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">未来</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                            <ul id="rightpull" class="nav pull-right">
+                                <!--插入登录或者个人-->
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-unit well" style="background-image: url('../../static/bgimgs/fw_bg.jpg'); background-repeat: no-repeat">
+
+                <div class="span5"></div>
+                <div class="tabbable" id="tabs-880160">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-945173" data-toggle="tab">支付宝</a>
+                        </li>
+                        <li>
+                            <a href="#panel-393558" data-toggle="tab">微信</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-945173">
+                            <ul>
+                            <li class="span4"></li>
+                            <li class="thumbnail span3">
+                                <img alt="200x200" src="alipay.png" />
+                                <p align="center" style="font-size: large; color: #006dcc">支付宝</p>
+                            </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="panel-393558">
+                            <ul>
+                            <li class="span4"></li>
+                            <li class="thumbnail span3">
+                                <img id="wximg" alt="200x200" src="wcash01.png" />
+                                <div class="dropup" align="center">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        选择金额
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <li id="wx01y"><a href="#">0.1元</a></li>
+                                        <li id="wx1y"><a href="#">1.00元</a></li>
+                                        <li id="wx10y"><a href="#">10 元</a></li>
+                                        <li id="wx50y"><a href="#">50 元</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--<HR style="FILTER: alpha(opacity=85,finishopacity=0,style=3)" width="100%" color=#999999 SIZE=2>-->
+            <hr/>
+            <div class="span12">
+                <ul class="thumbnails">
+                    <li class="thumbnail span1 myPosition">
+                        <img alt="200x200" src="../../images/chenkaiweixin.jpg" />
+                    </li>
+                    <li class="thumbnail span1 myPosition">
+                        <img alt="200x200" src="../../images/qinxiaoqiangweixin.jpg" />
+                    </li>
+                    <li class="thumbnail span1 myPosition">
+                        <img alt="200x200" src="../../images/wuhaiyangweixin.jpg" />
+                    </li>
+                    <li class="span6" style="text-align: center">
+                        <p style="font-size: small; text-overline-color: #111111">联系方式：ochenkai@aliyun.com 煮代码|MainCode
+                        </p>
+                        <p style="text-overline-color: #999999; font-size: small">版权所有:陈凯 | 秦晓强 | 吴海洋
+                        </p>
+                        <p style="font-size: smaller;">Copyright © 2011-2016  maincode.cn, All Rights Reserved  &nbsp;
+                            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258195460'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258195460%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

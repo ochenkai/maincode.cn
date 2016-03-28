@@ -2,32 +2,35 @@
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-	<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
-	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
-	<meta HTTP-EQUIV="expires" CONTENT="0">
 
-	<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-2.0.0.min.js"></script>
-	<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/jquery-ui"></script>
-	<link href="http://www.francescomalagrino.com/BootstrapPageGenerator/3/css/bootstrap-combined.min.css" rel="stylesheet" media="screen">
-	<script type="text/javascript" src="http://www.francescomalagrino.com/BootstrapPageGenerator/3/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="operation/operateCookie.js"></script>
-	<script>
-		window.onload =function() {
-			var userName = getCookie("username");
-			if (userName != "") {
-				document.getElementById("loginBtn").style.display = 'none';
-				document.getElementById("registBtn").style.display = 'none';
-				document.getElementById("profile").style.display = 'block';
-			}else{
-				document.getElementById("loginBtn").style.display = 'block';
-				document.getElementById("registBtn").style.display = 'block';
-				document.getElementById("profile").style.display = 'none';
-			}
-		}
-	</script>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.js"></script>
+
+	<link href="bootstrap-combined.min.css" rel="stylesheet" media="screen">
+
+	<script src="bootstrap.ck.js"></script>
+
+	<script src="users/headerNavigation.js"></script>
 
 	<link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
 	<title>MainCode | 煮代码 - 学习是一种信养！</title>
+	<style>
+		.myPosition:hover{
+			max-width: none;
+			/*width: -webkit-calc(100% + 50px);*/
+			-webkit-transform: scale(2.6);
+			-webkit-transition: opacity 0.35s,
+			-webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+
+		}
+		.myPosition {
+			width: calc(100%);
+		}
+
+	</style>
+
 </head>
 <body>
 
@@ -46,7 +49,7 @@
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 							<ul class="nav">
 								<li>
-									<a href="blogMD/examples/index.html" target="_blank">博客</a>
+									<a href="blog/broadBlog.html" target="_blank">博客</a>
 								</li>
 								<li>
 									<a href="http://www.leetcode.com" target="_blank">难题</a>
@@ -58,7 +61,7 @@
 									<a href="#">讨论</a>
 								</li>
 								<li class="dropdown">
-									 <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<strong class="caret"></strong></a>
+									<a data-toggle="dropdown" class="dropdown-toggle" href="#">更多<strong class="caret"></strong></a>
 									<ul class="dropdown-menu">
 										<li>
 											<a href="#">关于我们</a>
@@ -67,36 +70,26 @@
 											<a href="#">友情链接</a>
 										</li>
 										<li>
-											<a href="#">其他</a>
+											<a href="users/cash/cash.html">捐赠与打赏</a>
 										</li>
 										<li class="divider">
 										</li>
 										<li class="nav-header">
-											标签
+											in the future:
 										</li>
 										<li>
-											<a href="#">链接1</a>
+											<a href="#">愿景</a>
 										</li>
 										<li>
-											<a href="#">链接2</a>
+											<a href="#">未来</a>
 										</li>
 									</ul>
 								</li>
 							</ul>
 
 
-							<ul class="nav pull-right">
-								<li id="loginBtn">
-									<a href="loginAndRegist/login.html" target="_self">登录</a>
-								</li>
-								<li class="divider-vertical">
-								</li>
-								<li id="registBtn">
-									<a href="loginAndRegist/regist.html" target="_self">注册</a>
-								</li>
-								<li id="profile">
-									<a href="profile/profile.html" target="_blank">个人信息</a>
-								</li>
+							<ul id="rightpull" class="nav pull-right">
+								<!--插入登录或者个人-->
 							</ul>
 
 						</div>
@@ -104,72 +97,47 @@
 				</div>
 			</div>
 
-			<div class="hero-unit well">
+			<div class="hero-unit well" style="background-image: url('static/bgimgs/fw_bg.jpg'); background-repeat: no-repeat">
 
 				<h1>MainCode | 煮代码</h1>
 
 					<span class="websitelink">以码为镜,可以通逻辑!</span>
-				<br/><br/><br/><br/><br/>
-				<p align="center">
+				<br/><br/><br/><br/>
+				<p align="center" style="font-size: larger">
 					求知路上，与你相伴而行!
 				</p>
-				<br/><br/><br/><br/><br/><br/><br/><br/>
-
-				<ul class="thumbnails">
-					<li class="span4"></li>
-
-					<li class="span2">
-						<div class="thumbnail">
-							<img alt="300x300" src="images/chenkaiweixin.jpg" />
-							<div class="caption">
-								<p>
-									HTML 5 开发 （微信扫码关注）
-								</p>
-								<p>
-									<a href="http://www.ochenkai.com" target="_blank">CK的开发日志</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span2">
-						<div class="thumbnail">
-							<img alt="300x300" src="images/qinxiaoqiangweixin.jpg" />
-							<div class="caption">
-								<p>
-									iOS开发者 （微信扫码关注）
-								</p>
-								<p>
-									<a href="http://www.charmingqin.com" target="_blank">QXQ的技术博客</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span2">
-						<div class="thumbnail">
-							<img alt="300x300" src="images/wuhaiyangweixin.jpg" />
-							<div class="caption">
-								<p>
-									精英教育 （微信扫码关注）
-								</p>
-								<p>
-									<a href="http://www.wuocean.com">WO的技术博客</a>
-								</p>
-							</div>
-						</div>
-					</li>
-
-				</ul>
+				<br/><br/><br/><br/>
 			</div>
 
-			<!--<ol class="breadcrumb">-->
-				<!--<li><a href="http://www.ochenkai.com" target="_blank">CK的开发日志</a></li>-->
-				<!--<li><a href="http://www.charmingqin.com" target="_blank">QXQ的技术博客</a></li>\-->
-				<!--<li><a href="http://www.wuocean.com">WO的技术博客</a></li>-->
 
-			<!--</ol>-->
+			<!--<HR style="FILTER: alpha(opacity=85,finishopacity=0,style=3)" width="100%" color=#999999 SIZE=2>-->
+	<hr/>
+				<div class="span12">
+				<ul class="thumbnails">
+					<li class="thumbnail span1 myPosition">
+						<img alt="200x200" src="images/chenkaiweixin.jpg" />
+					</li>
+					<li class="thumbnail span1 myPosition">
+						<img alt="200x200" src="images/qinxiaoqiangweixin.jpg" />
+					</li>
+					<li class="thumbnail span1 myPosition">
+						<img alt="200x200" src="images/wuhaiyangweixin.jpg" />
+					</li>
+				<li class="span6" style="text-align: center">
+					<p style="font-size: small; text-overline-color: #111111">联系方式：ochenkai@aliyun.com 煮代码|MainCode
+					</p>
+					<p style="text-overline-color: #999999; font-size: small">版权所有:陈凯 | 秦晓强 | 吴海洋
+					</p>
+					<p style="font-size: smaller;">Copyright © 2011-2016  maincode.cn, All Rights Reserved  &nbsp;
+						<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258195460'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258195460%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+					</p>
+			</li>
+			</ul>
+				</div>
 
-		</div>
+
 	</div>
+</div>
 </div>
 </body>
 </html>
